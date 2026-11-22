@@ -14,107 +14,190 @@ The **Smart & Sustainable Campus Management System** unifies two crucial facets 
 
 ---
 
-## 2. Mandatory Color Theme & Design System
+## 2. Application Screenshots & Visual Walkthrough
+
+Here is a visual tour of the key portals and operational workflows within the application:
+
+### 2.1 Public & Authentication Portals
+
+| Screen | Description |
+| :--- | :--- |
+| **Landing Page** | High-impact hero section featuring dual operational pillars, interactive Eco Impact Simulator, live telemetry counters, and one-click quick demo launcher. |
+| **Unified Login** | Secure role-based portal offering instant demo access buttons for Student, Technician, Administrator, and Sustainability Officer. |
+
+#### Landing Page
+![Landing Page](docs/screenshots/01-landing-page.png)
+
+#### Unified Login Portal
+![Unified Login Portal](docs/screenshots/02-login-portal.png)
+
+---
+
+### 2.2 Student Experience
+
+| Screen | Description |
+| :--- | :--- |
+| **Student Dashboard** | Personal command center showing recent ticket statuses, live status progress, quick action cards, and green engagement summary. |
+| **Issue Reporting Form** | Intuitive incident reporting form with predefined campus assets, priority grading, multi-building selector, and photo upload proof. |
+
+#### Student Dashboard
+![Student Dashboard](docs/screenshots/03-student-dashboard.png)
+
+#### Incident & Facility Issue Reporting
+![Issue Reporting](docs/screenshots/04-report-issue.png)
+
+---
+
+### 2.3 Maintenance Staff Operations
+
+| Screen | Description |
+| :--- | :--- |
+| **Technician Operations Hub** | Focused dispatch board for field technicians to view assigned work orders, update repair statuses (Assigned → In Progress → Resolved), and document completion remarks. |
+
+#### Maintenance Staff Operations Hub
+![Maintenance Staff Operations](docs/screenshots/05-staff-operations.png)
+
+---
+
+### 2.4 Administrative Command Center & Asset Management
+
+| Screen | Description |
+| :--- | :--- |
+| **Admin Command Center** | Macro-level operational intelligence with real-time complaint distribution charts, department SLA performance, and resolution progress. |
+| **QR Code Asset Generator** | Automated printable QR badge generator for campus physical fixtures (projectors, water coolers, fume hoods, AC units) with auto-fill incident reporting links. |
+
+#### Admin Operations Command Center
+![Admin Command Center](docs/screenshots/06-admin-command-center.png)
+
+#### Printable QR Code Asset Generator
+![QR Code Asset Generator](docs/screenshots/07-qr-asset-generator.png)
+
+---
+
+### 2.5 Campus Sustainability Intelligence & Green Campaigns
+
+| Screen | Description |
+| :--- | :--- |
+| **Sustainability Dashboard** | Real-time carbon accounting index, solar offset ratio, energy/water balance graphs, and live eco-score calculation. |
+| **Resource Records Ledger** | Detailed monthly consumption records for electrical grids, solar generation, water usage, and segregated waste recycling. |
+| **Green Campus Campaigns** | Gamified student environmental initiatives, plastic diversion drives, energy-saving challenges, and reward point allocations. |
+
+#### Sustainability Intelligence Dashboard
+![Sustainability Intelligence Dashboard](docs/screenshots/08-sustainability-intelligence.png)
+
+#### Resource Consumption Ledger
+![Resource Records](docs/screenshots/09-resource-records.png)
+
+#### Green Campus Campaigns & Action Hub
+![Green Campus Campaigns](docs/screenshots/10-green-campaigns.png)
+
+---
+
+## 3. Mandatory Color Theme & Design System
 
 The application strictly implements the **Navy Blue + Mint Green** corporate SaaS palette:
 
 | Token | Hex Code | Purpose |
 | :--- | :--- | :--- |
-| **Primary Navy** | `#142B4A` | Sidebar, primary CTA buttons, main headings, table headers |
-| **Deep Navy** | `#0B172A` | Hero accents, bottom footer, notification cards, demo banner |
-| **Secondary Navy** | `#203D5B` | Active sidebar highlights, card borders |
-| **Mint Green** | `#75E0C0` | Primary eco highlights, success badges, chart accents |
-| **Soft Mint** | `#E3FAF2` | Pill backgrounds, metric card tags, active hover states |
-| **Page Background** | `#F5F8FC` | Main canvas background |
-| **Borders** | `#E3EAF2` | Card dividers, input outlines, table cell borders |
-| **Success / Warning / Error** | `#22A06B` / `#F4B942` / `#E05260` | Operational status indicators |
+| **Primary Navy** | #142B4A | Sidebar, primary CTA buttons, main headings, table headers |
+| **Deep Navy** | #0B172A | Hero accents, bottom footer, notification cards, dark backdrops |
+| **Secondary Navy** | #203D5B | Active sidebar highlights, card borders |
+| **Mint Green** | #75E0C0 | Primary eco highlights, success badges, chart accents |
+| **Soft Mint** | #E3FAF2 | Pill backgrounds, metric card tags, active hover states |
+| **Page Background** | #F5F8FC | Main canvas background |
+| **Borders** | #E3EAF2 | Card dividers, input outlines, table cell borders |
+| **Success / Warning / Error** | #22A06B / #F4B942 / #E05260 | Operational status indicators |
 
 ---
 
-## 3. Technology Stack
+## 4. Technology Stack
 
 - **Frontend**: React 19 with Vite
 - **Styling**: Tailwind CSS v3 with customized tokens
-- **Routing**: React Router v7 (`react-router-dom`)
+- **Routing**: React Router v7 (
+eact-router-dom)
 - **Data Visualization**: Recharts (Composed charts, Bar charts, Area charts, Pie charts)
 - **Icons**: Lucide React
-- **Notifications**: `react-hot-toast` + Database-backed in-app Notification Center
+- **Notifications**: 
+eact-hot-toast + Database-backed in-app Notification Center
 - **HTTP Client**: Axios with JWT Bearer Token interceptor
 - **Backend**: Node.js & Express.js
 - **Database**: MongoDB with Mongoose ODM
-- **Authentication**: JSON Web Tokens (JWT) & `bcryptjs` password hashing
-- **File Uploads**: Multer (Local disk storage in `backend/uploads/` with 5MB validation)
+- **Authentication**: JSON Web Tokens (JWT) & cryptjs password hashing
+- **File Uploads**: Multer (Local disk storage in ackend/uploads/ with 5MB validation)
 
 ---
 
-## 4. System Architecture & Folder Structure
+## 5. System Architecture & Folder Structure
 
-```
+`
 Smart_Sustainable_Campus_Web Project/
-+-- frontend/                   # Vite + React Frontend
-¦   +-- public/                 # Static assets & icons
-¦   +-- src/
-¦   ¦   +-- components/
-¦   ¦   ¦   +-- common/         # StatusBadge, PriorityBadge, Modal, ConfirmDialog, DemoBanner
-¦   ¦   ¦   +-- complaints/     # ComplaintTimeline, FeedbackForm
-¦   ¦   ¦   +-- layout/         # Navbar, Sidebar, Footer, DashboardLayout
-¦   ¦   +-- context/            # AuthContext (JWT & 1-click role switcher), NotificationContext
-¦   ¦   +-- pages/
-¦   ¦   ¦   +-- public/         # LandingPage, LoginPage, RegisterPage
-¦   ¦   ¦   +-- student/        # StudentDashboard, ReportIssuePage, MyComplaintsPage, ComplaintDetailPage
-¦   ¦   ¦   +-- staff/          # StaffDashboard, AssignedTasksPage, TaskDetailPage
-¦   ¦   ¦   +-- admin/          # AdminDashboard, ComplaintManagementPage, DepartmentManagementPage, UserManagementPage
-¦   ¦   ¦   +-- sustainability/ # SustainabilityDashboard, ResourceRecordsPage, CampaignsPage
-¦   ¦   +-- services/           # api.js, mockData.js, complaintService, sustainabilityService, departmentService
-¦   ¦   +-- App.jsx             # Role-protected route definitions
-¦   ¦   +-- index.css           # Tailwind directives & design system utilities
-¦   ¦   +-- main.jsx            # Application entry mount
-¦   +-- tailwind.config.js      # Custom theme color mappings
-¦   +-- package.json
-¦
-+-- backend/                    # Express.js + Node.js Backend
-¦   +-- src/
-¦   ¦   +-- config/             # db.js (MongoDB connection with graceful fallback)
-¦   ¦   +-- controllers/        # auth, complaint, department, sustainability, dashboard, notification
-¦   ¦   +-- middleware/         # auth (JWT & role check), upload (Multer), errorHandler
-¦   ¦   +-- models/             # User, Department, Complaint, Feedback, EnergyRecord, WaterRecord, WasteRecord, Campaign, Notification
-¦   ¦   +-- routes/             # authRoutes, complaintRoutes, departmentRoutes, sustainabilityRoutes, dashboardRoutes, notificationRoutes
-¦   ¦   +-- seeds/              # seed.js (comprehensive demo database seeder)
-¦   ¦   +-- index.js            # Express app entry & middleware mounting
-¦   +-- uploads/                # Local uploaded ticket images
-¦   +-- .env                    # Active environment variables
-¦   +-- .env.example            # Environment template
-¦   +-- package.json
-+-- README.md
-```
+├── frontend/                   # Vite + React Frontend
+│   ├── public/                 # Static assets & icons
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── common/         # StatusBadge, PriorityBadge, Modal, ConfirmDialog
+│   │   │   ├── complaints/     # ComplaintTimeline, FeedbackForm
+│   │   │   └── layout/         # Navbar, Sidebar, Footer, DashboardLayout
+│   │   ├── context/            # AuthContext (JWT & 1-click role switcher), NotificationContext
+│   │   ├── pages/
+│   │   │   ├── public/         # LandingPage, LoginPage, RegisterPage
+│   │   │   ├── student/        # StudentDashboard, ReportIssuePage, MyComplaintsPage, ComplaintDetailPage
+│   │   │   ├── staff/          # StaffDashboard, AssignedTasksPage, TaskDetailPage
+│   │   │   ├── admin/          # AdminDashboard, ComplaintManagementPage, DepartmentManagementPage, UserManagementPage, QrCodeGeneratorPage
+│   │   │   └── sustainability/ # SustainabilityDashboard, ResourceRecordsPage, CampaignsPage
+│   │   ├── services/           # api.js, mockData.js, complaintService, sustainabilityService, departmentService, dashboardService
+│   │   ├── App.jsx             # Role-protected route definitions
+│   │   ├── index.css           # Tailwind directives & design system utilities
+│   │   └── main.jsx            # Application entry mount
+│   ├── tailwind.config.js      # Custom theme color mappings
+│   └── package.json
+│
+├── backend/                    # Express.js + Node.js Backend
+│   ├── src/
+│   │   ├── config/             # db.js (MongoDB connection with graceful fallback)
+│   │   ├── controllers/        # auth, complaint, department, sustainability, dashboard, notification
+│   │   ├── middleware/         # auth (JWT & role check), upload (Multer), errorHandler
+│   │   ├── models/             # User, Department, Complaint, Feedback, EnergyRecord, WaterRecord, WasteRecord, Campaign, Notification
+│   │   ├── routes/             # authRoutes, complaintRoutes, departmentRoutes, sustainabilityRoutes, dashboardRoutes, notificationRoutes
+│   │   ├── seeds/              # seed.js (comprehensive demo database seeder)
+│   │   └── index.js            # Express app entry & middleware mounting
+│   ├── uploads/                # Local uploaded ticket images
+│   ├── .env                    # Active environment variables
+│   ├── .env.example            # Environment template
+│   └── package.json
+├── docs/
+│   └── screenshots/            # High-resolution application screenshots
+└── README.md
+`
 
 ---
 
-## 5. Demo Credentials (For Presentation / Viva Evaluation)
+## 6. Demo Credentials (For Presentation / Viva Evaluation)
 
 The database includes pre-seeded demo accounts with encrypted passwords for all 4 distinct roles:
 
 | Role | Email Address | Password | Name | Department / Zone |
 | :--- | :--- | :--- | :--- | :--- |
-| **Student** | `student@campus.edu` | `student123` | Aarav Sharma | Main Academic Campus |
-| **Maintenance Staff** | `staff.elec@campus.edu` | `staff123` | Vikram Singh | Electrical Maintenance |
-| **Maintenance Staff** | `staff.plumb@campus.edu` | `staff123` | Ramesh Patel | Plumbing & Water Supply |
-| **Administrator** | `admin@campus.edu` | `admin123` | Dr. Sunita Rao | Campus Administration |
-| **Sustainability Officer** | `sustainability@campus.edu` | `sustain123` | Priya Deshmukh | Eco Center |
+| **Student** | student@campus.edu | student123 | Aarav Sharma | Main Academic Campus |
+| **Maintenance Staff** | staff.elec@campus.edu | staff123 | Vikram Singh | Electrical Maintenance |
+| **Maintenance Staff** | staff.plumb@campus.edu | staff123 | Ramesh Patel | Plumbing & Water Supply |
+| **Administrator** | dmin@campus.edu | dmin123 | Dr. Sunita Rao | Campus Administration |
+| **Sustainability Officer** | sustainability@campus.edu | sustain123 | Priya Deshmukh | Eco Center |
 
 > **Evaluator Tip**: Quick demo accounts for all roles are available with one click directly from the **Landing Page** and the **Login Page**!
 
 ---
 
-## 6. How to Run the Project
+## 7. How to Run the Project
 
 ### Prerequisites
 - Node.js (v18+ or v22+ installed)
 - npm (v9+ installed)
-- MongoDB service running locally on `localhost:27017` (Optional: if MongoDB is stopped, the client automatically utilizes its built-in interactive demo storage).
+- MongoDB service running locally on localhost:27017 (Optional: if MongoDB is stopped, the client automatically utilizes its built-in interactive demo storage).
 
 ### Option A: Run from Project Root (Recommended)
-```bash
+`ash
 # In the project root directory:
 
 # Start Frontend (Vite on http://localhost:5173):
@@ -122,12 +205,12 @@ npm run frontend
 
 # In a second terminal, start Backend (Express on http://localhost:5000):
 npm run backend
-```
+`
 
 ### Option B: Run Individually from Separate Folders
 
-#### Step 1: Set Up Backend (`/backend`)
-```bash
+#### Step 1: Set Up Backend (/backend)
+`ash
 cd backend
 npm install
 
@@ -137,52 +220,52 @@ npm run seed
 # Start Express API server:
 npm run dev
 # Server runs on: http://localhost:5000
-```
+`
 
-#### Step 2: Set Up Frontend (`/frontend`)
-```bash
+#### Step 2: Set Up Frontend (/frontend)
+`ash
 cd frontend
 npm install
 
 # Start Vite dev server:
 npm run dev
 # Frontend runs on: http://localhost:5173
-```
+`
 
 ---
 
-## 7. Backend Implementation Status (50% Scope)
+## 8. Backend Implementation Status (50% Scope)
 
 As outlined in the specification, approximately 50% of the backend modules have been implemented with genuine MongoDB models, controllers, and protected routes:
 
 ### Fully Implemented Backend Modules (Included in this deliverable):
 1. **User Authentication & Authorization**:
-   - `POST /api/auth/register` (Strictly forbids student self-promotion to admin)
-   - `POST /api/auth/login` (Bcrypt hash comparison + JWT generation)
-   - `GET /api/auth/me` (Profile retrieval)
-   - `GET /api/auth/users` (Admin user listing & department allocation)
-   - `PATCH /api/auth/users/:id` (Safe account activation/deactivation)
+   - POST /api/auth/register (Strictly forbids student self-promotion to admin)
+   - POST /api/auth/login (Bcrypt hash comparison + JWT generation)
+   - GET /api/auth/me (Profile retrieval)
+   - GET /api/auth/users (Admin user listing & department allocation)
+   - PATCH /api/auth/users/:id (Safe account activation/deactivation)
 2. **Complaint Lifecycle**:
-   - `POST /api/complaints` (Multipart Multer upload, ID generation `CMP-YYYY-XXXX`, initial state `Submitted`)
-   - `GET /api/complaints` (Role-scoped filtering, pagination, search)
-   - `GET /api/complaints/:id` (Full ticket inspection with history)
-   - `PATCH /api/complaints/:id/assign` (Admin dispatch to department & staff)
-   - `PATCH /api/complaints/:id/status` (Workflow transition validation: `Assigned` $\rightarrow$ `In Progress` $\rightarrow$ `Resolved`)
-   - `POST /api/complaints/:id/feedback` (Student 5-star rating & review)
+   - POST /api/complaints (Multipart Multer upload, ID generation CMP-YYYY-XXXX, initial state Submitted)
+   - GET /api/complaints (Role-scoped filtering, pagination, search)
+   - GET /api/complaints/:id (Full ticket inspection with history)
+   - PATCH /api/complaints/:id/assign (Admin dispatch to department & staff)
+   - PATCH /api/complaints/:id/status (Workflow transition validation: Assigned → In Progress → Resolved)
+   - POST /api/complaints/:id/feedback (Student 5-star rating & review)
 3. **Department Management**:
-   - `GET /api/departments`
-   - `POST /api/departments`
-   - `PATCH /api/departments/:id`
-   - `DELETE /api/departments/:id` (Audit-safe deactivation preserving historical relations)
+   - GET /api/departments
+   - POST /api/departments
+   - PATCH /api/departments/:id
+   - DELETE /api/departments/:id (Audit-safe deactivation preserving historical relations)
 4. **Sustainability & Resource CRUD**:
-   - `GET /api/sustainability/summary` (Dynamic mathematical calculation of net electricity, solar offset, and carbon emissions)
-   - `GET /api/sustainability/trends` (Monthly aggregation for Recharts)
-   - Energy CRUD (`/api/sustainability/energy`)
-   - Water CRUD (`/api/sustainability/water`)
-   - Waste CRUD (`/api/sustainability/waste` with boundary validation: `amountRecycled <= totalGenerated`)
-   - Campaign listing and joining (`/api/sustainability/campaigns`)
+   - GET /api/sustainability/summary (Dynamic mathematical calculation of net electricity, solar offset, and carbon emissions)
+   - GET /api/sustainability/trends (Monthly aggregation for Recharts)
+   - Energy CRUD (/api/sustainability/energy)
+   - Water CRUD (/api/sustainability/water)
+   - Waste CRUD (/api/sustainability/waste with boundary validation: mountRecycled <= totalGenerated)
+   - Campaign listing and joining (/api/sustainability/campaigns)
 5. **Dashboard Statistics APIs**:
-   - Role-partitioned dashboard aggregations (`/api/dashboard/student`, `/staff`, `/admin`).
+   - Role-partitioned dashboard aggregations (/api/dashboard/student, /staff, /admin).
 
 ### Remaining Backend Work (Next Phase / Future Scope):
 - Real-time WebSockets / Socket.io for instant push notifications.
@@ -193,24 +276,40 @@ As outlined in the specification, approximately 50% of the backend modules have 
 
 ---
 
-## 8. Documented Sustainability Formulas & Carbon Factors
+## 9. Documented Sustainability Formulas & Carbon Factors
 
 ### A. Carbon Emission Estimation Formula
-$$\text{Total } \text{CO}_2\text{e (kg)} = (E_{\text{net}} \times 0.82) + (W_{\text{total}} \times 0.00035) + (L_{\text{unrecycled}} \times 1.25) - (R_{\text{recycled}} \times 0.45)$$
+\text{Total } \text{CO}_2\text{e (kg)} = (E_{\text{net}} \times 0.82) + (W_{\text{total}} \times 0.00035) + (L_{\text{unrecycled}} \times 1.25) - (R_{\text{recycled}} \times 0.45)
 
-- **Grid Electricity**: $0.82\text{ kg CO}_2\text{e per kWh}$ (CEA National Benchmark)
+- **Grid Electricity**: .82\text{ kg CO}_2\text{e per kWh}$ (CEA National Benchmark)
 - **Solar Offset**: $-0.82\text{ kg CO}_2\text{e per kWh}$
-- **Water Footprint**: $0.00035\text{ kg CO}_2\text{e per Litre}$
-- **Landfill Waste**: $1.25\text{ kg CO}_2\text{e per kg}$
+- **Water Footprint**: .00035\text{ kg CO}_2\text{e per Litre}$
+- **Landfill Waste**: .25\text{ kg CO}_2\text{e per kg}$
 - **Recycling Avoidance**: $-0.45\text{ kg CO}_2\text{e per kg}$
 
 ### B. Campus Sustainability Score (0–100)
-$$\text{Score} = \min\left(100, \left(\frac{\text{Solar}}{\text{Total Power}} \times 35\right) + \left(\frac{\text{Waste Recycled}}{\text{Total Waste}} \times 35\right) + \left(\frac{\text{Water Recycled}}{\text{Total Water}} \times 15\right) + \left(\frac{\text{Resolved Complaints}}{\text{Total Complaints}} \times 15\right)\right)$$
+\text{Score} = \min\left(100, \left(\frac{\text{Solar}}{\text{Total Power}} \times 35\right) + \left(\frac{\text{Waste Recycled}}{\text{Total Waste}} \times 35\right) + \left(\frac{\text{Water Recycled}}{\text{Total Water}} \times 15\right) + \left(\frac{\text{Resolved Complaints}}{\text{Total Complaints}} \times 15\right)\right)
 
 ---
 
+## 10. Viva Voce & College Presentation Tips
 
-## 9. License & Credits
+1. **How to demonstrate the core workflow?**
+   - Start on the **Landing Page** to show the Navy & Mint UI and project overview.
+   - Use the 1-Click Demo selector on the Landing Page or Login page to log in as **Student** → File a complaint at /student/report (e.g. water cooler leakage).
+   - Log in as **Admin** → Show the new complaint in /admin/complaints → Open **Assign / Edit** modal and dispatch to the Plumbing department and technician Ramesh Patel.
+   - Log in as **Staff** → Open /staff/tasks → Transition ticket to **In Progress**, then **Resolved** with remarks.
+   - Switch back to **Student** → Open /student/complaints → Verify ticket is **Resolved** → Fill out the 5-star **Feedback Form**.
+   - Navigate to the **Sustainability Portal** → Show how resource consumption and the sustainability score update dynamically!
+2. **Security Highlights**:
+   - Passwords hashed with cryptjs (salt rounds: 10).
+   - Route protection enforced on backend via protect JWT middleware and uthorize('admin', 'staff', ...) role checks.
+   - Students cannot self-assign Admin roles during registration.
+   - Safe deactivation preserves historical audit logs without breaking relational references.
 
-Developed for the **Web Technology (WT)** curriculum at **MIT Academy of Engineering**.
+---
+
+## 11. License & Credits
+
+Developed for the **Web Technology (WT)** curriculum at **MIT Academy of Engineering**.  
 Built with React, Vite, Tailwind CSS, Node.js, Express, and MongoDB.
