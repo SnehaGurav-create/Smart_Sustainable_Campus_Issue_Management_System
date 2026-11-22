@@ -10,7 +10,7 @@
 The **Smart & Sustainable Campus Management System** unifies two crucial facets of modern university administration into a single, high-aesthetic web application:
 
 1. **Campus Complaint & Maintenance Management**: Enables students and staff to log issues (plumbing, electrical, cleanliness, IT, lab safety) with image proofs and specific location tagging. Administrators review and dispatch work orders to specialized maintenance departments with SLA targets. Technicians start repairs, upload completion remarks/proofs, and students submit 5-star ratings and feedback.
-2. **Campus Sustainability Management**: Tracks resource consumption (grid electricity, clean rooftop solar generation, municipal water intake, treated greywater, and solid waste segregation). Dynamically computes campus carbon footprint ($\text{kg CO}_2\text{e}$) and an auditable, weighted **Campus Sustainability Score (0–100)** while fostering student eco-action through gamified green campaigns.
+2. **Campus Sustainability Management**: Tracks resource consumption (grid electricity, clean rooftop solar generation, municipal water intake, treated greywater, and solid waste segregation). Dynamically computes campus carbon footprint ($\text{kg CO}_2\text{e}$) and an auditable, weighted **Campus Sustainability Score (0â€“100)** while fostering student eco-action through gamified green campaigns.
 
 ---
 
@@ -52,39 +52,39 @@ The application strictly implements the **Navy Blue + Mint Green** corporate Saa
 ```
 Smart_Sustainable_Campus_Web Project/
 +-- frontend/                   # Vite + React Frontend
-¦   +-- public/                 # Static assets & icons
-¦   +-- src/
-¦   ¦   +-- components/
-¦   ¦   ¦   +-- common/         # StatusBadge, PriorityBadge, Modal, ConfirmDialog, DemoBanner
-¦   ¦   ¦   +-- complaints/     # ComplaintTimeline, FeedbackForm
-¦   ¦   ¦   +-- layout/         # Navbar, Sidebar, Footer, DashboardLayout
-¦   ¦   +-- context/            # AuthContext (JWT & 1-click role switcher), NotificationContext
-¦   ¦   +-- pages/
-¦   ¦   ¦   +-- public/         # LandingPage, LoginPage, RegisterPage
-¦   ¦   ¦   +-- student/        # StudentDashboard, ReportIssuePage, MyComplaintsPage, ComplaintDetailPage
-¦   ¦   ¦   +-- staff/          # StaffDashboard, AssignedTasksPage, TaskDetailPage
-¦   ¦   ¦   +-- admin/          # AdminDashboard, ComplaintManagementPage, DepartmentManagementPage, UserManagementPage
-¦   ¦   ¦   +-- sustainability/ # SustainabilityDashboard, ResourceRecordsPage, CampaignsPage
-¦   ¦   +-- services/           # api.js, mockData.js, complaintService, sustainabilityService, departmentService
-¦   ¦   +-- App.jsx             # Role-protected route definitions
-¦   ¦   +-- index.css           # Tailwind directives & design system utilities
-¦   ¦   +-- main.jsx            # Application entry mount
-¦   +-- tailwind.config.js      # Custom theme color mappings
-¦   +-- package.json
-¦
+Â¦   +-- public/                 # Static assets & icons
+Â¦   +-- src/
+Â¦   Â¦   +-- components/
+Â¦   Â¦   Â¦   +-- common/         # StatusBadge, PriorityBadge, Modal, ConfirmDialog, DemoBanner
+Â¦   Â¦   Â¦   +-- complaints/     # ComplaintTimeline, FeedbackForm
+Â¦   Â¦   Â¦   +-- layout/         # Navbar, Sidebar, Footer, DashboardLayout
+Â¦   Â¦   +-- context/            # AuthContext (JWT & 1-click role switcher), NotificationContext
+Â¦   Â¦   +-- pages/
+Â¦   Â¦   Â¦   +-- public/         # LandingPage, LoginPage, RegisterPage
+Â¦   Â¦   Â¦   +-- student/        # StudentDashboard, ReportIssuePage, MyComplaintsPage, ComplaintDetailPage
+Â¦   Â¦   Â¦   +-- staff/          # StaffDashboard, AssignedTasksPage, TaskDetailPage
+Â¦   Â¦   Â¦   +-- admin/          # AdminDashboard, ComplaintManagementPage, DepartmentManagementPage, UserManagementPage
+Â¦   Â¦   Â¦   +-- sustainability/ # SustainabilityDashboard, ResourceRecordsPage, CampaignsPage
+Â¦   Â¦   +-- services/           # api.js, mockData.js, complaintService, sustainabilityService, departmentService
+Â¦   Â¦   +-- App.jsx             # Role-protected route definitions
+Â¦   Â¦   +-- index.css           # Tailwind directives & design system utilities
+Â¦   Â¦   +-- main.jsx            # Application entry mount
+Â¦   +-- tailwind.config.js      # Custom theme color mappings
+Â¦   +-- package.json
+Â¦
 +-- backend/                    # Express.js + Node.js Backend
-¦   +-- src/
-¦   ¦   +-- config/             # db.js (MongoDB connection with graceful fallback)
-¦   ¦   +-- controllers/        # auth, complaint, department, sustainability, dashboard, notification
-¦   ¦   +-- middleware/         # auth (JWT & role check), upload (Multer), errorHandler
-¦   ¦   +-- models/             # User, Department, Complaint, Feedback, EnergyRecord, WaterRecord, WasteRecord, Campaign, Notification
-¦   ¦   +-- routes/             # authRoutes, complaintRoutes, departmentRoutes, sustainabilityRoutes, dashboardRoutes, notificationRoutes
-¦   ¦   +-- seeds/              # seed.js (comprehensive demo database seeder)
-¦   ¦   +-- index.js            # Express app entry & middleware mounting
-¦   +-- uploads/                # Local uploaded ticket images
-¦   +-- .env                    # Active environment variables
-¦   +-- .env.example            # Environment template
-¦   +-- package.json
+Â¦   +-- src/
+Â¦   Â¦   +-- config/             # db.js (MongoDB connection with graceful fallback)
+Â¦   Â¦   +-- controllers/        # auth, complaint, department, sustainability, dashboard, notification
+Â¦   Â¦   +-- middleware/         # auth (JWT & role check), upload (Multer), errorHandler
+Â¦   Â¦   +-- models/             # User, Department, Complaint, Feedback, EnergyRecord, WaterRecord, WasteRecord, Campaign, Notification
+Â¦   Â¦   +-- routes/             # authRoutes, complaintRoutes, departmentRoutes, sustainabilityRoutes, dashboardRoutes, notificationRoutes
+Â¦   Â¦   +-- seeds/              # seed.js (comprehensive demo database seeder)
+Â¦   Â¦   +-- index.js            # Express app entry & middleware mounting
+Â¦   +-- uploads/                # Local uploaded ticket images
+Â¦   +-- .env                    # Active environment variables
+Â¦   +-- .env.example            # Environment template
+Â¦   +-- package.json
 +-- README.md
 ```
 
@@ -204,29 +204,13 @@ $$\text{Total } \text{CO}_2\text{e (kg)} = (E_{\text{net}} \times 0.82) + (W_{\t
 - **Landfill Waste**: $1.25\text{ kg CO}_2\text{e per kg}$
 - **Recycling Avoidance**: $-0.45\text{ kg CO}_2\text{e per kg}$
 
-### B. Campus Sustainability Score (0–100)
+### B. Campus Sustainability Score (0â€“100)
 $$\text{Score} = \min\left(100, \left(\frac{\text{Solar}}{\text{Total Power}} \times 35\right) + \left(\frac{\text{Waste Recycled}}{\text{Total Waste}} \times 35\right) + \left(\frac{\text{Water Recycled}}{\text{Total Water}} \times 15\right) + \left(\frac{\text{Resolved Complaints}}{\text{Total Complaints}} \times 15\right)\right)$$
 
 ---
 
-## 9. Viva Voce & College Presentation Tips
 
-1. **How to demonstrate the core workflow?**
-   - Start on the **Landing Page** to show the Navy & Mint UI and project overview.
-   - Use the 1-Click Demo selector on the Landing Page or Login page to log in as **Student** $\rightarrow$ File a complaint at `/student/report` (e.g. water leakage in lab).
-   - Log in as **Admin** $\rightarrow$ Show the new complaint in `/admin/complaints` $\rightarrow$ Open **Assign / Edit** modal and dispatch to the Plumbing department and technician Ramesh Patel.
-   - Log in as **Staff** $\rightarrow$ Open `/staff/tasks` $\rightarrow$ Transition ticket to **In Progress**, then **Resolved** with remarks.
-   - Switch back to **Student** $\rightarrow$ Open `/student/complaints` $\rightarrow$ Verify ticket is **Resolved** $\rightarrow$ Fill out the 5-star **Feedback Form**.
-   - Navigate to the **Sustainability Portal** $\rightarrow$ Show how resource consumption and the sustainability score update dynamically!
-2. **Security Highlights**:
-   - Passwords hashed with `bcryptjs` (salt rounds: 10).
-   - Route protection enforced on backend via `protect` JWT middleware and `authorize('admin', 'staff', ...)` role checks.
-   - Students cannot self-assign Admin roles during registration.
-   - Safe deactivation preserves historical audit logs without breaking relational references.
-
----
-
-## 10. License & Credits
+## 9. License & Credits
 
 Developed for the **Web Technology (WT)** curriculum at **MIT Academy of Engineering**.
 Built with React, Vite, Tailwind CSS, Node.js, Express, and MongoDB.
